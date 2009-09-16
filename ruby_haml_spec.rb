@@ -1,7 +1,7 @@
 require "json"
 require "haml"
 
-groups = JSON.parse(File.read("tests.json"))
+contexts = JSON.parse(File.read("tests.json"))
 
 locals = {
   :var   => "value",
@@ -9,9 +9,9 @@ locals = {
   :last  => "z"
 }
 
-groups.each do |group|
-  name = group[0]
-  expectations = group[1]
+contexts.each do |context|
+  name = context[0]
+  expectations = context[1]
   describe "When handling #{name}," do
     expectations.each do |input, expected|
       it "should render \"#{input}\" as \"#{expected}\"" do

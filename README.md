@@ -23,11 +23,14 @@ such as :markdown or :textile.
 ### Ruby ###
 
 The Ruby test uses RSpec, so just install the gem and run `spec ruby_haml_spec.rb`.
+I have only tested it against Ruby 1.9; if you want to run it on an older Ruby
+you'll need to install the "json" gem.
 
 ### Lua ###
 
-The Lua test depends on [Telescope](http://telescope.luaforge.net/)
-and [Lua Haml](http://github.com/norman/lua-haml). Install and
+The Lua test depends on [Telescope](http://telescope.luaforge.net/),
+[jason4lua](http://json.luaforge.net/), and
+[Lua Haml](http://github.com/norman/lua-haml). Install and
 run `tsc lua_haml_spec.lua`.
 
 ## Contributing ##
