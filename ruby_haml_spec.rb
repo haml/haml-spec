@@ -1,7 +1,6 @@
 require "json"
 require "haml"
-
-contexts = JSON.parse(File.read("tests.json"))
+contexts = JSON.parse(File.read(File.dirname(__FILE__) + "/tests.json"))
 
 locals = {
   :var   => "value",
