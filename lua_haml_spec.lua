@@ -2,9 +2,9 @@ require 'luarocks.require'
 require 'json'
 require 'telescope'
 require 'haml'
-require 'std'
 
-local fh = assert(io.open("tests.json"))
+local testfile = debug.getinfo(1).short_src:gsub("/.*$", "/tests.json")
+local fh = assert(io.open(testfile))
 local input = fh:read '*a'
 fh:close()
 local tests = json.decode(input)
@@ -14,6 +14,7 @@ local locals = {
   first = "a",
   last  = "z"
 }
+
 
 describe("The LuaHaml Renderer", function()
   for context, set in pairs(tests) do
