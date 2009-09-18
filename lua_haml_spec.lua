@@ -11,27 +11,20 @@ local function get_tests(filename)
   end
 end
 
-local fh = assert(io.open(get_tests("tests.json")))
+local fh = assert(io.open(get_tests("tests-new.json")))
 local input = fh:read '*a'
 fh:close()
 
 local contexts = json.decode(input)
 
-local locals = {
-  var   = "value",
-  first = "a",
-  last  = "z"
-}
-
-describe("The LuaHaml Renderer", function()
-  for context, expectations in pairs(contexts) do
-    describe("When handling " .. context, function()
-      for input, expectation in pairs(expectations) do
-        it(string.format("should render '%s' as '%s'", string.gsub(input, "\n", "\\n"),
-            string.gsub(expectation, "\n", "\\n")), function()
-            assert_equal(haml.render(input, {}, locals), expectation)
+describe("LuaHaml", function()
+   for context, expectations in pairs(contexts) do
+     describe("When handling " .. context, function()
+      for name, exp in pairs(expectations) do
+        it(string.format("should correctly render %s", name), function()
+            assert_equal(haml.render(exp.haml, exp.config or {}, exp.locals or {}), exp.html)
         end)
       end
-    end)
-  end
+     end)
+   end
 end)
