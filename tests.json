@@ -1,16 +1,19 @@
 {
   "headers" : {
+
+    "an XHTML XML prolog" : {
+      "haml" : "!!! XML",
+      "html" : "<?xml version='1.0' encoding='utf-8' ?>"
+    },
+
     "an XHTML default (transitional) doctype" : {
       "haml" : "!!!",
       "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
     },
 
-    "an HTML 5 doctype" : {
-      "haml" : "!!!",
-      "html" : "<!DOCTYPE html>",
-      "config" : {
-        "format" : "html5"
-      }
+    "an XHTML 1.1 doctype" : {
+      "haml" : "!!! 1.1",
+      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
     },
 
     "an XHTML 1.2 mobile doctype" : {
@@ -18,12 +21,14 @@
       "html" : "<!DOCTYPE html PUBLIC \"-//WAPFORUM//DTD XHTML Mobile 1.2//EN\" \"http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd\">"
     },
 
-    "an HTML 4 default (transitional) doctype" : {
-      "haml" : "!!!",
-      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">",
-      "config" : {
-        "format" : "html4"
-      }
+    "an XHTML 1.1 basic doctype" : {
+      "haml" : "!!! basic",
+      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML Basic 1.1//EN\" \"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd\">"
+    },
+
+    "an XHTML 1.0 frameset doctype" : {
+      "haml" : "!!! frameset",
+      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
     },
 
     "an HTML 5 XML prolog (silent)" : {
@@ -34,16 +39,11 @@
       }
     },
 
-    "an XHTML XML prolog" : {
-      "haml" : "!!! XML",
-      "html" : "<?xml version='1.0' encoding='utf-8' ?>"
-    },
-
-    "an HTML 4 frameset doctype" : {
-      "haml" : "!!! frameset",
-      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\" \"http://www.w3.org/TR/html4/frameset.dtd\">",
+    "an HTML 5 doctype" : {
+      "haml" : "!!!",
+      "html" : "<!DOCTYPE html>",
       "config" : {
-        "format" : "html4"
+        "format" : "html5"
       }
     },
 
@@ -55,28 +55,30 @@
       }
     },
 
+    "an HTML 4 default (transitional) doctype" : {
+      "haml" : "!!!",
+      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">",
+      "config" : {
+        "format" : "html4"
+      }
+    },
+
+    "an HTML 4 frameset doctype" : {
+      "haml" : "!!! frameset",
+      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\" \"http://www.w3.org/TR/html4/frameset.dtd\">",
+      "config" : {
+        "format" : "html4"
+      }
+    },
+
     "an HTML 4 strict doctype" : {
       "haml" : "!!! strict",
       "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">",
       "config" : {
         "format" : "html4"
       }
-    },
-
-    "an XHTML 1.1 basic doctype" : {
-      "haml" : "!!! basic",
-      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML Basic 1.1//EN\" \"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd\">"
-    },
-
-    "an XHTML 1.1 doctype" : {
-      "haml" : "!!! 1.1",
-      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">"
-    },
-
-    "an XHTML 1.0 frameset doctype" : {
-      "haml" : "!!! frameset",
-      "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
     }
+
   },
 
   "basic Haml tags and CSS": {
@@ -107,7 +109,7 @@
       }
     },
 
-    "a tag with CSS class" : {
+    "a tag with a CSS class" : {
       "haml" : "%p.class1",
       "html" : "<p class='class1'></p>"
     },
@@ -117,7 +119,7 @@
       "html" : "<p class='class1 class2'></p>"
     },
 
-    "a tag with CSS id" : {
+    "a tag with a CSS id" : {
       "haml" : "%p#id1",
       "html" : "<p id='id1'></p>"
     },
@@ -127,7 +129,7 @@
       "html" : "<p id='id2'></p>"
     },
 
-    "a tag with class followed by an id" : {
+    "a tag with a class followed by an id" : {
       "haml" : "%p.class1#id1",
       "html" : "<p class='class1' id='id1'></p>"
     },
@@ -137,12 +139,12 @@
       "html" : "<p class='class1' id='id1'></p>"
     },
 
-    "an implicit div with CSS id" : {
+    "an implicit div with a CSS id" : {
       "haml" : "#id1",
       "html" : "<div id='id1'></div>"
     },
 
-    "an implicit div with CSS class" : {
+    "an implicit div with a CSS class" : {
       "haml" : ".class1",
       "html" : "<div class='class1'></div>"
     }
@@ -241,7 +243,7 @@
       "html" : "<p a='b' c='d'></p>"
     },
 
-    "an iterpolated attribute" : {
+    "an interpolated attribute" : {
       "haml" : "%p(a=\"#{var}\")",
       "html" : "<p a='value'></p>",
       "locals" : {
@@ -307,7 +309,7 @@
       "html" : "<p a='b'></p>"
     },
 
-    "an iterpolated attribute" : {
+    "an interpolated attribute" : {
       "haml" : "%p{:a =>\"#{var}\"}",
       "html" : "<p a='value'></p>",
       "locals" : {
@@ -374,7 +376,7 @@
       }
     },
 
-    "an iterpolated attribute" : {
+    "an interpolated attribute" : {
       "haml" : "%p{:a =>\"#{var}\"}",
       "html" : "<p a='value'></p>",
       "locals" : {
