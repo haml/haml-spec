@@ -374,16 +374,7 @@
       "locals" : {
         "var" : "a"
       }
-    },
-
-    "an interpolated attribute" : {
-      "haml" : "%p{:a =>\"#{var}\"}",
-      "html" : "<p a='value'></p>",
-      "locals" : {
-        "var" : "value"
-      }
     }
-
   },
 
   "silent comments" : {
