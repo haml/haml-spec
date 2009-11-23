@@ -147,7 +147,7 @@
     "an implicit div with a CSS class" : {
       "haml" : ".class1",
       "html" : "<div class='class1'></div>"
-    }
+    },
 
     "multiple simple Haml tags" : {
       "haml" : "%div\n  %div\n    %p",
@@ -212,7 +212,7 @@
     "a tag with CSS" : {
       "haml" : "%p.class1 hello",
       "html" : "<p class='class1'>hello</p>"
-    }
+    },
 
     "multiple simple tags" : {
       "haml" : "%div\n  %div\n    %p text",
@@ -230,7 +230,7 @@
     "a tag with CSS" : {
       "haml" : "%p.class1\n  hello",
       "html" : "<p class='class1'>\n  hello\n</p>"
-    }
+    },
 
     "multiple simple tags" : {
       "haml" : "%div\n  %div\n    %p\n      text",
