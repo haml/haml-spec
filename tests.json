@@ -31,6 +31,11 @@
       "html" : "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">"
     },
 
+    "an HTML 5 doctype with XHTML syntax" : {
+      "haml" : "!!! 5",
+      "html" : "<!DOCTYPE html>"
+    },
+
     "an HTML 5 XML prolog (silent)" : {
       "haml" : "!!! XML",
       "html" : "",
