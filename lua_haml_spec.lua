@@ -11,7 +11,7 @@ local function get_tests(filename)
   end
 end
 
-local fh = assert(io.open(get_tests("tests-new.json")))
+local fh = assert(io.open(get_tests("tests.json")))
 local input = fh:read '*a'
 fh:close()
 
