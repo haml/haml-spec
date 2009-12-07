@@ -510,6 +510,25 @@
       }
     }
 
+  },
+
+  "Boolean attributes" : {
+
+    "boolean attribute with XHTML" : {
+      "haml" : "%input(checked=true)",
+      "html" : "<input checked='checked' />",
+      "config" : {
+        "format" : "xhtml"
+      }
+    },
+
+    "boolean attribute with HTML" : {
+      "haml" : "%input(checked=true)",
+      "html" : "<input checked>",
+      "config" : {
+        "format" : "html5"
+      }
+    }
   }
 
 }
