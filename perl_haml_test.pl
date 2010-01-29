@@ -20,7 +20,7 @@ while (my ($section_name, $section) = each %$tests) {
     diag $section_name;
 
     while (my ($test_name, $test) = each %$section) {
-        is( Text::Haml->new(%{$test->{config}})
+        is( Text::Haml->new(%{$test->{config}}, vars_as_subs => 1)
               ->render($test->{haml}, %{$test->{locals}}),
             $test->{html}, $test_name
         );
