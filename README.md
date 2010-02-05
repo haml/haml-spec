@@ -5,10 +5,12 @@ Haml Spec provides a basic suite of tests for Haml interpreters.
 It is intented for developers who are creating or maintaining an implementation
 of the [Haml](http://haml-lang.com) markup language.
 
-At the moment, there are test runners for the [original Haml](http://github.com/nex3/haml)
-in Ruby, and for [Lua Haml](http://github.com/norman/lua-haml). Support for
-other versions of Haml will be added if their developers/maintainers
-are interested in using it.
+At the moment, there are test runners for the [original
+Haml](http://github.com/nex3/haml) in Ruby, [Lua
+Haml](http://github.com/norman/lua-haml) and the
+[Text::Haml](http://github.com/vti/text-haml) Perl port. Support for other
+versions of Haml will be added if their developers/maintainers are interested in
+using it.
 
 ## The Tests ##
 
