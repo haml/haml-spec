@@ -466,7 +466,10 @@
 
     "no interpolation when escaped" : {
       "haml" : "%p \\#{var}",
-      "html" : "<p>#{var}</p>"
+      "html" : "<p>#{var}</p>",
+      "locals" : {
+        "var" : "value"
+      }
     },
 
     "interpolation when the escape character is escaped" : {
