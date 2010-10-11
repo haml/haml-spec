@@ -532,6 +532,18 @@
         "format" : "html5"
       }
     }
-  }
+  },
 
+  "Automatic whitespace preservation" : {
+
+    "with a textarea tag" : {
+      "haml" : "%textarea\n  hello\n  hello",
+      "html" : "<textarea>hello\nhello</textarea>"
+    },
+
+    "with a pre tag" : {
+      "haml" : "%pre\n  hello\n  hello",
+      "html" : "<pre>hello\nhello</pre>"
+    }
+  }
 }
