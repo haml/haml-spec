@@ -545,5 +545,17 @@
       "haml" : "%pre\n  hello\n  hello",
       "html" : "<pre>hello\nhello</pre>"
     }
+  },
+
+  "Whitespace removal" : {
+    "a tag with > appended" : {
+      "haml" : "%li hello\n%li> world\n%li again",
+      "html" : "<li>hello</li><li>world</li><li>again</li>"
+    },
+
+    "a tag with < appended" : {
+      "haml" : "%p<\n  hello\n  world",
+      "html" : "<p>hello\nworld</p>"
+    }
   }
 }
