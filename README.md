@@ -46,12 +46,12 @@ Then, running the Ruby test suite is easy:
 
 ### Lua ###
 
-The Lua test depends on [Telescope](http://telescope.luaforge.net/),
+The Lua test depends on
+[Penlight](http://stevedonovan.github.com/Penlight/),
+[Telescope](http://telescope.luaforge.net/),
 [jason4lua](http://json.luaforge.net/), and
-[Lua Haml](http://github.com/norman/lua-haml). Install and
-run `tsc lua_haml_spec.lua`.
-
-## Contributing ##
+[Lua Haml](http://github.com/norman/lua-haml). Install and run `tsc
+lua_haml_spec.lua`.
 
 ### Getting it ###
 
