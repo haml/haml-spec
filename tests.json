@@ -548,12 +548,18 @@
   },
 
   "Whitespace removal" : {
-    "a tag with > appended" : {
+
+    "with '>' appended and inline content" : {
       "haml" : "%li hello\n%li> world\n%li again",
       "html" : "<li>hello</li><li>world</li><li>again</li>"
     },
 
-    "a tag with < appended" : {
+    "with '>' appended and nested content" : {
+      "haml" : "%li hello\n%li>\n  world\n%li again",
+      "html" : "<li>hello</li><li>\n  world\n</li><li>again</li>"
+    },
+
+    "a tag with '<' appended" : {
       "haml" : "%p<\n  hello\n  world",
       "html" : "<p>hello\nworld</p>"
     }
