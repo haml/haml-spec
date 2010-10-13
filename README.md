@@ -22,9 +22,11 @@ filters such as :markdown or :textile.
 
 The one major exception to this are the tests for interpolation, which you may
 need to modify with a regular expression to run under PHP or Perl, which
-require a symbol before variable names. These tests are included despite being
+require a sigil before variable names. These tests are included despite being
 less than 100% portable because interpolation is an important part of Haml and
-can be tricky to implement.
+can be tricky to implement. These tests are flagged as "optional" so that you
+can avoid running them if your implementation of Haml will not support this
+feature.
 
 ## Running the Tests ##
 
@@ -44,11 +46,14 @@ Then, running the Ruby test suite is easy:
 
     ruby ruby_haml_test.rb
 
+At the moment, running the tests with Ruby 1.8.7 fails because of issues with
+the JSON library. Please use 1.9.2 until this is resolved.
+
 ### Lua ###
 
 The Lua test depends on
 [Penlight](http://stevedonovan.github.com/Penlight/),
-[Telescope](http://telescope.luaforge.net/),
+[Telescope](http://github.com/norman/telescope),
 [jason4lua](http://json.luaforge.net/), and
 [Lua Haml](http://github.com/norman/lua-haml). Install and run `tsc
 lua_haml_spec.lua`.
@@ -67,11 +72,12 @@ be very happy to add them.
 ### Test JSON format ###
 
     "test name" : {
-      "haml" : "haml input",
-      "html" : "expected html output",
-      "result" : "expected test result",
-      "locals" : "local vars",
-      "config" : "config params"
+      "haml"     : "haml input",
+      "html"     : "expected html output",
+      "result"   : "expected test result",
+      "locals"   : "local vars",
+      "config"   : "config params",
+      "optional" : true|false
     }
 
 * test name: This should be a *very* brief description of what's being tested. It can
@@ -88,6 +94,7 @@ be very happy to add them.
   names, you may need to process them to make them match your implementation.
   If your implementation has options that do not exist in Ruby's Haml, then you
   should add tests for this in your implementation's test rather than here.
+* optional: whether or not the test is optional
 
 ## License ##
 
