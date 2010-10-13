@@ -454,11 +454,12 @@
 
   },
 
-  "interpolation": {
+  "Ruby-style interpolation": {
 
     "interpolation inside inline content" : {
       "haml" : "%p #{var}",
       "html" : "<p>value</p>",
+      "optional" : true,
       "locals" : {
         "var" : "value"
       }
@@ -467,6 +468,7 @@
     "no interpolation when escaped" : {
       "haml" : "%p \\#{var}",
       "html" : "<p>#{var}</p>",
+      "optional" : true,
       "locals" : {
         "var" : "value"
       }
@@ -475,6 +477,7 @@
     "interpolation when the escape character is escaped" : {
       "haml" : "%p \\\\#{var}",
       "html" : "<p>\\value</p>",
+      "optional" : true,
       "locals" : {
         "var" : "value"
       }
@@ -483,11 +486,11 @@
     "interpolation inside filtered content" : {
       "haml" : ":plain\n  #{var} interpolated: #{var}",
       "html" : "value interpolated: value",
+      "optional" : true,
       "locals" : {
         "var" : "value"
       }
     }
-
   },
 
   "HTML escaping" : {
