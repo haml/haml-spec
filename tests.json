@@ -518,7 +518,7 @@
 
   },
 
-  "Boolean attributes" : {
+  "boolean attributes" : {
 
     "boolean attribute with XHTML" : {
       "haml" : "%input(checked=true)",
@@ -537,7 +537,7 @@
     }
   },
 
-  "Automatic whitespace preservation" : {
+  "automatic whitespace preservation" : {
 
     "with a textarea tag" : {
       "haml" : "%textarea\n  hello\n  hello",
@@ -550,14 +550,13 @@
     }
   },
 
-  "Whitespace removal" : {
 
-    "with '>' appended and inline content" : {
+    "a tag with '>' appended and inline content" : {
       "haml" : "%li hello\n%li> world\n%li again",
       "html" : "<li>hello</li><li>world</li><li>again</li>"
     },
 
-    "with '>' appended and nested content" : {
+    "a tag with '>' appended and nested content" : {
       "haml" : "%li hello\n%li>\n  world\n%li again",
       "html" : "<li>hello</li><li>\n  world\n</li><li>again</li>"
     },
