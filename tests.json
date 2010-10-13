@@ -550,6 +550,7 @@
     }
   },
 
+  "whitespace removal" : {
 
     "a tag with '>' appended and inline content" : {
       "haml" : "%li hello\n%li> world\n%li again",
