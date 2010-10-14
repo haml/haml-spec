@@ -29,7 +29,8 @@ describe("LuaHaml", function()
      describe("When handling " .. context, function()
       for name, exp in pairs(expectations) do
         it(("should correctly render %s"):format(name), function()
-            assert_equal(haml.render(exp.haml, exp.config or {}, exp.locals or {}), exp.html)
+          local engine = haml.new(exp.config)
+          assert_equal(engine:render(exp.haml, exp.locals), exp.html)
         end)
       end
      end)
