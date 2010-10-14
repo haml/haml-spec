@@ -469,6 +469,11 @@
       "html" : "hello\n<p></p>"
     },
 
+    "content in a 'css' filter" : {
+      "haml" : ":css\n  hello\n\n%p",
+      "html" : "<style type='text/css'>\n  /*<![CDATA[*/\n    hello\n  /*]]>*/\n</style>\n<p></p>"
+    },
+
     "content in a 'javascript' filter" : {
       "haml" : ":javascript\n  a();\n%p",
       "html" : "<script type='text/javascript'>\n  //<![CDATA[\n    a();\n  //]]>\n</script>\n<p></p>"
