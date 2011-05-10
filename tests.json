@@ -428,8 +428,12 @@
     "a nested silent comment" : {
       "haml" : "-#\n  hello",
       "html" : ""
-    }
+    },
 
+    "a multiply nested silent comment" : {
+      "haml" : "-#\n  %div\n    foo",
+      "html" : ""
+    }
   },
 
   "markup comments" : {
