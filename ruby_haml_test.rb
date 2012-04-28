@@ -1,3 +1,4 @@
+require "rubygems"
 require "test/unit"
 require "json"
 require "haml"
@@ -6,14 +7,17 @@ class HamlTest < Test::Unit::TestCase
   contexts = JSON.parse(File.read(File.dirname(__FILE__) + "/tests.json"))
   contexts.each do |context|
     context[1].each do |name, test|
-      class_eval(<<-EOTEST)
-        def test_#{name.gsub(/\s+|[^a-zA-Z0-9_]/, "_")}
-          locals = Hash[*(#{test}["locals"] || {}).collect {|k, v| [k.to_sym, v] }.flatten]
-          options = Hash[*(#{test}["config"] || {}).collect {|k, v| [k.to_sym, v.to_sym] }.flatten]
-          engine = Haml::Engine.new(#{test}["haml"], options)
-          assert_equal(#{test}["html"], engine.render(Object.new, locals).chomp)
-        end
-      EOTEST
+      define_method("test_spec: #{name} (#{context[0]})") do
+        html             = test["html"]
+        haml             = test["haml"]
+        locals           = Hash[(test["locals"] || {}).map {|x, y| [x.to_sym, y]}]
+        options          = Hash[(test["config"] || {}).map {|x, y| [x.to_sym, y]}]
+        options[:format] = options[:format].to_sym if options.key?(:format)
+        engine           = Haml::Engine.new(test["haml"], options)
+        result           = engine.render(Object.new, locals)
+
+        assert_equal html, result.strip
+      end
     end
   end
 end
