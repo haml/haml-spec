@@ -433,6 +433,11 @@
     "a multiply nested silent comment" : {
       "haml" : "-#\n  %div\n    foo",
       "html" : ""
+    },
+
+    "a multiply nested silent comment with inconsistent indents" : {
+      "haml" : "-#\n  %div\n      foo",
+      "html" : ""
     }
   },
 

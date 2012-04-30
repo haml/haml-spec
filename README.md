@@ -44,7 +44,7 @@ using Ruby 1.8.x, you'll also need to install `json`:
 
 Then, running the Ruby test suite is easy:
 
-    ruby ruby_haml_test.rb
+    ruby -rminitest/autorun ruby_haml_test.rb
 
 At the moment, running the tests with Ruby 1.8.7 fails because of issues with
 the JSON library. Please use 1.9.2 until this is resolved.
