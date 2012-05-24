@@ -13,7 +13,7 @@ class HamlTest < Test::Unit::TestCase
         locals           = Hash[(test["locals"] || {}).map {|x, y| [x.to_sym, y]}]
         options          = Hash[(test["config"] || {}).map {|x, y| [x.to_sym, y]}]
         options[:format] = options[:format].to_sym if options.key?(:format)
-        engine           = Haml::Engine.new(test["haml"], options)
+        engine           = Haml::Engine.new(haml, options)
         result           = engine.render(Object.new, locals)
 
         assert_equal html, result.strip
