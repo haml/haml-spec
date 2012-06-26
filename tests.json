@@ -521,6 +521,21 @@
       }
     },
 
+    "content in a 'css' filter (HTML)" : {
+      "haml" : ":css\n  hello\n\n%p",
+      "html" : "<style>\n  hello\n</style>\n<p></p>",
+      "config" : {
+        "format" : "html5"
+      }
+    },
+
+    "content in a 'javascript' filter (HTML)" : {
+      "haml" : ":javascript\n  a();\n%p",
+      "html" : "<script>\n  a();\n</script>\n<p></p>",
+      "config" : {
+        "format" : "html5"
+      }
+    }
   },
 
   "Ruby-style interpolation": {
