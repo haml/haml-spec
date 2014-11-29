@@ -3,7 +3,9 @@ require "minitest/autorun"
 require "json"
 require "haml"
 
-class HamlTest < MiniTest::Unit::TestCase
+minitest_base_class = defined?(Minitest::Test) ? Minitest::Test : MiniTest::Unit::TestCase
+
+class HamlTest < minitest_base_class
   contexts = JSON.parse(File.read(File.dirname(__FILE__) + "/tests.json"))
   contexts.each do |context|
     context[1].each do |name, test|
