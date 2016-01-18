@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More;
 use Text::Haml;
 use FindBin;
 use JSON 'from_json';
@@ -16,10 +16,22 @@ open FILE, "< $FindBin::Bin/tests.json" or die $!;
 $tests = from_json(join("\n", <FILE>));
 close FILE;
 
+
+my $test_count = 0;
 while (my ($section_name, $section) = each %$tests) {
+    $test_count += scalar(keys(%$section));
+}
+
+plan tests => $test_count;
+
+# want the test numbers to match across runs
+for my $section_name (sort keys(%$tests)) {
+    my $section = $tests->{$section_name};
+    
     diag $section_name;
 
-    while (my ($test_name, $test) = each %$section) {
+    for my $test_name (sort keys(%$section)) {
+        my $test = $section->{$test_name};
         is( Text::Haml->new(%{$test->{config}}, vars_as_subs => 1)
               ->render($test->{haml}, %{$test->{locals}}),
             $test->{html}, $test_name
