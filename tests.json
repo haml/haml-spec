@@ -196,7 +196,7 @@
 
     "multiple simple Haml tags" : {
       "haml" : "%div\n  %div\n    %p",
-      "html" : "<div>\n  <div>\n    <p></p>\n  </div>\n</div>"
+      "html" : "<div>\n<div>\n<p></p>\n</div>\n</div>"
     }
   },
 
@@ -260,7 +260,7 @@
 
     "Inline content multiple simple tags" : {
       "haml" : "%div\n  %div\n    %p text",
-      "html" : "<div>\n  <div>\n    <p>text</p>\n  </div>\n</div>"
+      "html" : "<div>\n<div>\n<p>text</p>\n</div>\n</div>"
     }
   },
 
@@ -268,17 +268,17 @@
 
     "Nested content simple tag" : {
       "haml" : "%p\n  hello",
-      "html" : "<p>\n  hello\n</p>"
+      "html" : "<p>\nhello\n</p>"
     },
 
     "Nested content tag with CSS" : {
       "haml" : "%p.class1\n  hello",
-      "html" : "<p class='class1'>\n  hello\n</p>"
+      "html" : "<p class='class1'>\nhello\n</p>"
     },
 
     "Nested content multiple simple tags" : {
       "haml" : "%div\n  %div\n    %p\n      text",
-      "html" : "<div>\n  <div>\n    <p>\n      text\n    </p>\n  </div>\n</div>"
+      "html" : "<div>\n<div>\n<p>\ntext\n</p>\n</div>\n</div>"
     }
   },
 
@@ -482,14 +482,14 @@
 
     "a nested markup comment" : {
       "haml" : "/\n  comment\n  comment2",
-      "html" : "<!--\n  comment\n  comment2\n-->"
+      "html" : "<!--\ncomment\ncomment2\n-->"
     }
   },
 
   "conditional comments": {
     "a conditional comment" : {
       "haml" : "/[if IE]\n  %p a",
-      "html" : "<!--[if IE]>\n  <p>a</p>\n<![endif]-->"
+      "html" : "<!--[if IE]>\n<p>a</p>\n<![endif]-->"
     }
   },
 
@@ -654,7 +654,7 @@
 
     "a tag with '>' appended and nested content" : {
       "haml" : "%li hello\n%li>\n  world\n%li again",
-      "html" : "<li>hello</li><li>\n  world\n</li><li>again</li>"
+      "html" : "<li>hello</li><li>\nworld\n</li><li>again</li>"
     },
 
     "a tag with '<' appended" : {
