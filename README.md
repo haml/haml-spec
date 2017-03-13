@@ -58,6 +58,14 @@ The Lua test depends on
 [Lua Haml](http://github.com/norman/lua-haml). Install and run `tsc
 lua_haml_spec.lua`.
 
+### Python/Django ###
+
+The Python tests use [django-hamlpy](https://github.com/nyaruka/django-hamlpy)
+implementation. To install and the run the tests:
+
+    pip install django-hamlpy
+    python python_haml_test.py
+
 ### Getting it ###
 
 You can access the [Git repository](http://github.com/norman/haml-spec) at:
