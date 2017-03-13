@@ -6,32 +6,26 @@ from collections import OrderedDict
 from hamlpy import compiler
 
 
-def run_test(test, description):
-    try:
-        html = compiler.Compiler(options=test.get('config')).process(test['haml'])
-        error = None
-    except Exception as e:
-        html = ''
-        error = e
+num_pass, num_fail, num_error = 0, 0, 0
 
-    if html.strip() == test['html']:
-        print(" > %s OK" % description)
-    elif error:
-        print(" > %s: ERROR" % description)
-        print("   Exception: %s" % str(error))
-    else:
-        print(" > %s: FAIL" % description)
-        print("   Expected: %s" % test['html'].replace('\n', '\\n'))
-        print("   Actual  : %s" % html.replace('\n', '\\n'))
+with open('tests.json') as f:
+    tests = json.load(f, object_pairs_hook=OrderedDict)
+    for category, category_tests in tests.items():
+        print(category)
+        for description, test in category_tests.items():
+            try:
+                html = compiler.Compiler(options=test.get('config')).process(test['haml']).strip()
+                if html == test['html']:
+                    print(" > %s: OK" % description)
+                    num_pass += 1
+                else:
+                    print(" > %s: FAIL" % description)
+                    print("    - Expected: %s" % test['html'].replace('\n', '\\n'))
+                    print("    - Actual  : %s" % html.replace('\n', '\\n'))
+                    num_fail += 1
+            except Exception as e:
+                print(" > %s: ERROR" % description)
+                print("    - Exception: %s" % str(e))
+                num_error += 1
 
-
-def run_all():
-    with open('tests.json') as f:
-        tests = json.load(f, object_pairs_hook=OrderedDict)
-        for category, category_tests in tests.items():
-            print(category)
-            for description, test in category_tests.items():
-                run_test(test, description)
-
-
-run_all()
+print("==== Passed: %d, Failed: %d, Errors: %d ====" % (num_pass, num_fail, num_error))
