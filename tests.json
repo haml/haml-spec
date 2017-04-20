@@ -314,7 +314,7 @@
 
     "HTML-style tag with a CSS class and 'class' as an attribute" : {
       "haml" : "%p.class2(class='class1')",
-      "html" : "<p class='class1 class2'></p>"
+      "html" : "<p class='class2 class1'></p>"
     },
 
     "HTML-style tag with 'id' as an attribute" : {
@@ -343,9 +343,9 @@
       }
     },
 
-    "HTML-style tag multiple CSS classes (sorted correctly)" : {
+    "HTML-style tag multiple CSS classes" : {
       "haml" : ".z(class=var)",
-      "html" : "<div class='a z'></div>",
+      "html" : "<div class='z a'></div>",
       "locals" : {
         "var" : "a"
       }
@@ -400,7 +400,7 @@
 
     "Ruby-style tag with a CSS class and 'class' as an attribute" : {
       "haml" : "%p.class2{:class => 'class1'}",
-      "html" : "<p class='class1 class2'></p>",
+      "html" : "<p class='class2 class1'></p>",
       "optional" : true
     },
 
@@ -440,9 +440,9 @@
       }
     },
 
-    "Ruby-style tag multiple CSS classes (sorted correctly)" : {
+    "Ruby-style tag multiple CSS classes" : {
       "haml" : ".z{:class => var}",
-      "html" : "<div class='a z'></div>",
+      "html" : "<div class='z a'></div>",
       "optional" : true,
       "locals" : {
         "var" : "a"
