@@ -243,6 +243,11 @@
     "a class with dashes" : {
       "haml" : ".--",
       "html" : "<div class='--'></div>"
+    },
+
+    "a class with escaped unsupported characters like / and '\\'": {
+      "haml" : ".h\/c\\",
+      "html" : "<div class='h\/c\\'></div>"
     }
   },
 
