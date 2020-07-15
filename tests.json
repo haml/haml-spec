@@ -455,6 +455,19 @@
     }
   },
 
+  "tags with multiple types of classes": {
+    "HTML-style class and Ruby-style class": {
+      "haml": "%div{class: 'hash'}(class='html')",
+      "html": "<div class='html hash'></div>",
+      "optional": true
+    },
+    "Three types of multiple classes come out in correct order": {
+      "haml": ".foo.moo{:class => ['bar', 'alpha']}(class='baz')",
+      "html": "<div class='foo moo baz bar alpha'></div>",
+      "optional": true
+    }
+  },
+
   "silent comments" : {
 
     "an inline silent comment" : {
